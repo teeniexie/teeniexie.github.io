@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitPilot - OAuth Callback</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f7f4; color: #1f2d23; margin: 0; }
+    .wrap { max-width: 760px; margin: 40px auto; padding: 0 16px; }
+    .card { background: #fff; border: 1px solid #d5e1d8; border-radius: 12px; padding: 18px; }
+    h1 { margin-top: 0; }
+    code { background: #f1f5f2; padding: 2px 6px; border-radius: 6px; }
+    .ok { color: #15624d; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <h1>OAuth 回调页</h1>
+      <p class="ok">页面可访问，说明重定向 URL 配置正常。</p>
+      <p>你可以把这个 URL 填到 Garmin 表单的「重定向 URL」：</p>
+      <p><code id="callbackUrl"></code></p>
+      <hr />
+      <p><strong>授权返回参数（调试用）</strong></p>
+      <p id="result">未检测到参数。</p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("callbackUrl").textContent = window.location.origin + "/oauth-callback.html";
+    const params = new URLSearchParams(window.location.search);
+    const hash = window.location.hash ? window.location.hash.slice(1) : "";
+    const hashParams = new URLSearchParams(hash);
+    const code = params.get("code") || hashParams.get("code");
+    const state = params.get("state") || hashParams.get("state");
+    const error = params.get("error") || hashParams.get("error");
+    const result = document.getElementById("result");
+
+    if (error) {
+      result.textContent = "授权返回错误: " + error;
+    } else if (code) {
+      result.textContent = "已收到授权 code（演示页不做换 token）。state=" + (state || "(empty)");
+    }
+  </script>
+</body>
+</html>
