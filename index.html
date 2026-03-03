@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitPilot - Personal Fitness Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app-bg"></div>
+  <main class="container shell">
+    <header class="hero card shell-hero">
+      <p class="tag">Fitness Intelligence Platform</p>
+      <h1>FitPilot</h1>
+      <p>FitPilot 通过健康数据与训练日志，为用户生成次日饮食与训练建议，帮助安全持续地达成健身目标。</p>
+      <div class="cta-row">
+        <a class="btn primary" href="./tracker.html">打开产品体验</a>
+        <a class="btn" href="./privacy-policy.html">隐私政策</a>
+        <a class="btn" href="./data-deletion.html">数据删除说明</a>
+      </div>
+    </header>
+
+    <section class="grid-2">
+      <article class="card shell-card">
+        <h2>核心能力</h2>
+        <ul class="plain-list">
+          <li>基础信息管理：体重、体脂、目标、活动水平</li>
+          <li>每日记录：睡眠、步数、饮食、训练、疲劳</li>
+          <li>训练肌群追踪：可视化肌肉刺激图</li>
+          <li>建议引擎：自动生成次日饮食与训练建议</li>
+        </ul>
+      </article>
+      <article class="card shell-card">
+        <h2>数据与合规</h2>
+        <ul class="plain-list">
+          <li>仅在用户授权后访问第三方平台数据</li>
+          <li>支持用户主动断开同步与删除数据</li>
+          <li>最小化采集原则，仅用于训练与营养建议</li>
+          <li>不售卖个人健康数据</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card shell-card">
+      <h2>Application Links</h2>
+      <div class="link-grid">
+        <a href="./tracker.html">Product Demo / Tracker</a>
+        <a href="./privacy-policy.html">Privacy Policy</a>
+        <a href="./terms.html">Terms of Service</a>
+        <a href="./data-deletion.html">Data Deletion Instructions</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </section>
+
+    <section class="card shell-card">
+      <h2>System Overview</h2>
+      <p class="muted">Client: Web app</p>
+      <p class="muted">Planned integration: Garmin Connect data sync through OAuth2-based backend service.</p>
+      <p class="muted">Current status: local tracking MVP launched, cloud sync integration in preparation.</p>
+    </section>
+  </main>
+</body>
+</html>
